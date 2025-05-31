@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BloopAi
+
+An AI-powered video call application built from scratch with comprehensive real-time communication features, intelligent meeting assistance, and seamless integration capabilities.
+
+## Overview
+
+BloopAi provides a complete video conferencing solution that combines traditional video calling with advanced AI capabilities. The application features custom real-time agents, automated meeting summaries, transcript generation, and a full post-call experience including video playback and AI-powered chat assistance.
+
+## Key Features
+
+### 🎥 Core Video Communication
+
+- **AI-powered video calls** - Enhanced video conferencing with intelligent features
+- **Custom real-time agents** - Personalized AI assistants for your meetings
+- **Stream Video SDK** - Robust video streaming capabilities
+- **Stream Chat SDK** - Integrated chat functionality
+
+### 📝 Meeting Intelligence
+
+- **Summaries, transcripts, recordings** - Comprehensive meeting documentation
+- **Meeting history & statuses** - Track and manage all your meetings
+- **Transcript search** - Quickly find specific moments in your meetings
+- **AI meeting Q&A** - Get answers about your meeting content
+
+### 🎬 Post-Meeting Experience
+
+- **Video playback** - Review your recorded meetings
+- **OpenAI integration** - Advanced AI processing and insights
+
+### 🔧 Technical Features
+
+- **Polar subscriptions** - Flexible subscription management
+- **Better Auth login** - Secure and streamlined authentication
+- **Mobile responsive** - Optimized for all devices
+- **Next.js 15 + React 19** - Built with the latest web technologies
+- **Tailwind v4 + Shadcn/ui** - Modern, responsive design system
+
+### ⚙️ Development & Deployment
+
+- **Inngest background jobs** - Reliable background processing
+- **CodeRabbit PR reviews** - Automated code review assistance
+- **Full Git workflow with AI-assisted code reviews** - Streamlined development process
+
+## Technology Stack
+
+- **Frontend**: Next.js 15, React 19, Tailwind CSS v4, Shadcn/ui
+- **Backend**: Next.js 15, Drizzle, Trpc and Neon DB
+- **Authentication**: Better Auth
+- **Video/Chat**: Stream Video SDK, Stream Chat SDK
+- **AI Integration**: OpenAI
+- **Background Processing**: Inngest
+- **Subscriptions**: Polar
+- **Code Review**: CodeRabbit
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (Latest LTS version recommended)
+- npm or yarn package manager
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## Learn More
+3. Set up environment variables (create a `.env.local` file by coping `.env.example`):
 
-To learn more about Next.js, take a look at the following resources:
+   ```env
+   # Add your API keys and configuration here
+   # OpenAI API Key
+   # Stream API credentials
+   # Database connection string
+   # Other service credentials
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Deploy on Vercel
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Resources
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Free Assets
+
+Access free design assets and resources to customize your BloopAi instance.
+
+### Documentation
+
+- **Neon Database**: Cloud PostgreSQL database setup and management
+- **CodeRabbit**: Automated code review integration
+- **Stream**: Video and chat SDK documentation
+- **Inngest**: Background job processing
+- **DrizzleORM**: Database ORM and query builder
+
+## Features in Detail
+
+### AI-Powered Meeting Assistant
+
+BloopAi's AI agents can participate in meetings, take notes, answer questions, and provide real-time assistance to meeting participants.
+
+### Comprehensive Meeting Management
+
+Track meeting statuses, access complete histories, and search through transcripts to find exactly what you need from past conversations.
+
+### Developer-Friendly Architecture
+
+Built with modern web technologies and includes automated code reviews, background job processing, and a complete Git workflow optimized for team collaboration.
+
+### Mobile-First Design
+
+Fully responsive design ensures a seamless experience across desktop, tablet, and mobile devices.
+
+## Contributing
+
+We welcome contributions! Please review our contributing guidelines and submit pull requests for any improvements.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support and questions, please refer to the documentation links provided in the resources section or open an issue in the project repository.
