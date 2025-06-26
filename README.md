@@ -127,7 +127,6 @@ Access free design assets and resources to enhance your generated websites.
 ### Documentation
 
 - **Neon Database**: Cloud PostgreSQL database setup and management
-- **CodeRabbit**: Automated code review integration
 - **OpenAI**: AI content generation and optimization
 - **Inngest**: Background job processing
 - **PrismaORM**: Database ORM and query builder
