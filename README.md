@@ -1,52 +1,56 @@
 # BloopAi
 
-An AI-powered video call application built from scratch with comprehensive real-time communication features, intelligent meeting assistance, and seamless integration capabilities.
+An AI-powered website creation platform that transforms your ideas into fully functional websites using natural language prompts. Build beautiful, responsive websites instantly with intelligent AI assistance.
 
 ## Overview
 
-BloopAi provides a complete video conferencing solution that combines traditional video calling with advanced AI capabilities. The application features custom real-time agents, automated meeting summaries, transcript generation, and a full post-call experience including video playback and AI-powered chat assistance.
+BloopAi is a revolutionary website builder that leverages advanced AI to create custom websites from simple text prompts. Similar to Lovable, users can describe their desired website in natural language, and our AI will generate a complete, functional website with modern design, responsive layout, and all necessary features.
 
 ## Key Features
 
-### 🎥 Core Video Communication
+### 🎨 AI-Powered Website Generation
 
-- **AI-powered video calls** - Enhanced video conferencing with intelligent features
-- **Custom real-time agents** - Personalized AI assistants for your meetings
-- **Stream Video SDK** - Robust video streaming capabilities
-- **Stream Chat SDK** - Integrated chat functionality
+- **Natural language prompts** - Describe your website in plain English
+- **Instant website creation** - Generate complete websites in seconds
+- **Custom AI agents** - Intelligent website builders tailored to your needs
+- **Multiple design styles** - Choose from various themes and layouts
 
-### 📝 Meeting Intelligence
+### 🚀 Website Features
 
-- **Summaries, transcripts, recordings** - Comprehensive meeting documentation
-- **Meeting history & statuses** - Track and manage all your meetings
-- **Transcript search** - Quickly find specific moments in your meetings
-- **AI meeting Q&A** - Get answers about your meeting content
+- **Responsive design** - Automatically optimized for all devices
+- **Modern UI/UX** - Beautiful, professional designs
+- **Interactive components** - Forms, animations, and dynamic content
+- **SEO optimization** - Built-in search engine optimization
+- **Performance optimized** - Fast loading and smooth interactions
 
-### 🎬 Post-Meeting Experience
+### 📝 Content Management
 
-- **Video playback** - Review your recorded meetings
-- **OpenAI integration** - Advanced AI processing and insights
+- **AI content generation** - Automatic text, images, and media creation
+- **Easy editing** - Modify content with simple prompts
+- **Version control** - Track changes and revert when needed
+- **Template library** - Pre-built templates for common use cases
 
 ### 🔧 Technical Features
 
-- **Polar subscriptions** - Flexible subscription management
-- **Better Auth login** - Secure and streamlined authentication
-- **Mobile responsive** - Optimized for all devices
 - **Next.js 15 + React 19** - Built with the latest web technologies
 - **Tailwind v4 + Shadcn/ui** - Modern, responsive design system
+- **AI integration** - OpenAI-powered content and design generation
+- **Real-time collaboration** - Work together on website creation
+- **Export capabilities** - Download your website code
 
 ### ⚙️ Development & Deployment
 
-- **Inngest background jobs** - Reliable background processing
-- **CodeRabbit PR reviews** - Automated code review assistance
-- **Full Git workflow with AI-assisted code reviews** - Streamlined development process
+- **One-click deployment** - Deploy to various platforms instantly
+- **Custom domains** - Connect your own domain names
+- **Analytics integration** - Track website performance
+- **Background processing** - Inngest-powered AI generation
+- **Code review assistance** - AI-powered development workflow
 
 ## Technology Stack
 
 - **Frontend**: Next.js 15, React 19, Tailwind CSS v4, Shadcn/ui
-- **Backend**: Next.js 15, Drizzle, Trpc and Neon DB
-- **Authentication**: Better Auth
-- **Video/Chat**: Stream Video SDK, Stream Chat SDK
+- **Backend**: Next.js 15, Prisma, Trpc and Neon DB
+- **Authentication**: Clerk Auth
 - **AI Integration**: OpenAI
 - **Background Processing**: Inngest
 - **Subscriptions**: Polar
@@ -70,12 +74,11 @@ BloopAi provides a complete video conferencing solution that combines traditiona
    yarn install
    ```
 
-3. Set up environment variables (create a `.env.local` file by coping `.env.example`):
+3. Set up environment variables (create a `.env.local` file by copying `.env.example`):
 
    ```env
    # Add your API keys and configuration here
    # OpenAI API Key
-   # Stream API credentials
    # Database connection string
    # Other service credentials
    ```
@@ -90,37 +93,68 @@ BloopAi provides a complete video conferencing solution that combines traditiona
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## How It Works
+
+### 1. Describe Your Website
+
+Simply tell BloopAi what kind of website you want to create. For example:
+
+- "Create a portfolio website for a graphic designer"
+- "Build an e-commerce site for handmade jewelry"
+- "Make a blog about sustainable living"
+
+### 2. AI Generation
+
+Our advanced AI analyzes your prompt and generates:
+
+- Complete website structure
+- Responsive design and layout
+- Relevant content and images
+- Interactive features and functionality
+
+### 3. Customize & Deploy
+
+- Review and edit the generated website
+- Make additional changes with simple prompts
+- Deploy instantly to your preferred platform
+
 ## Resources
 
 ### Free Assets
 
-Access free design assets and resources to customize your BloopAi instance.
+Access free design assets and resources to enhance your generated websites.
 
 ### Documentation
 
 - **Neon Database**: Cloud PostgreSQL database setup and management
 - **CodeRabbit**: Automated code review integration
-- **Stream**: Video and chat SDK documentation
+- **OpenAI**: AI content generation and optimization
 - **Inngest**: Background job processing
-- **DrizzleORM**: Database ORM and query builder
+- **PrismaORM**: Database ORM and query builder
 
 ## Features in Detail
 
-### AI-Powered Meeting Assistant
+### Intelligent Website Generation
 
-BloopAi's AI agents can participate in meetings, take notes, answer questions, and provide real-time assistance to meeting participants.
+BloopAi's AI understands context and creates websites that match your vision perfectly. From simple landing pages to complex e-commerce sites, our AI handles all the technical details.
 
-### Comprehensive Meeting Management
+### Real-Time Collaboration
 
-Track meeting statuses, access complete histories, and search through transcripts to find exactly what you need from past conversations.
+Work together with team members to create and refine websites. Share prompts, review changes, and collaborate seamlessly in real-time.
 
-### Developer-Friendly Architecture
+### Professional Quality
+
+Every generated website includes:
+
+- Mobile-responsive design
+- SEO optimization
+- Fast loading times
+- Accessibility features
+- Modern UI/UX patterns
+
+### Developer-Friendly
 
 Built with modern web technologies and includes automated code reviews, background job processing, and a complete Git workflow optimized for team collaboration.
-
-### Mobile-First Design
-
-Fully responsive design ensures a seamless experience across desktop, tablet, and mobile devices.
 
 ## Contributing
 
