@@ -1,0 +1,17 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (pruqpcpjwbtiwhi8edxh) or template name (bloop-nextjs) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox("bloop-nextjs") # Sync sandbox
+# sandbox = await AsyncSandbox.create("bloop-nextjs") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('bloop-nextjs')
+
+team_id = "f7d5d6be-1cf7-4088-b17c-e869bdc482b9"
+start_cmd = "/compile_page.sh"
+dockerfile = "e2b.Dockerfile"
+template_name = "bloop-nextjs"
+template_id = "pruqpcpjwbtiwhi8edxh"
