@@ -27,7 +27,7 @@ function getQueryClient() {
 }
 
 function getUrl() {
-  if (typeof window !== "undefined") return "";
+  if (typeof window !== "undefined") return "/api/trpc";
   return `${process.env.NEXT_PUBLIC_APP_URL}/api/trpc`;
 }
 

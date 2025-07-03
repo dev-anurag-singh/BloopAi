@@ -1,18 +1,18 @@
 import { inngest } from "@/inngest/client";
 import { prisma } from "@/lib/prisma";
 import { baseProcedure, createTRPCRouter } from "@/trpc/init";
-import { TRPCError } from "@trpc/server";
 import { z } from "zod";
+import { generateTitleFromPrompt } from "../util/generateTitle";
 
-export const messagesRouter = createTRPCRouter({
+export const projectsRouter = createTRPCRouter({
   getMany: baseProcedure.query(async () => {
-    const messages = await prisma.message.findMany({
+    const projects = await prisma.project.findMany({
       orderBy: {
         createdAt: "desc",
       },
     });
 
-    return messages;
+    return projects;
   }),
   create: baseProcedure
     .input(
@@ -21,29 +21,23 @@ export const messagesRouter = createTRPCRouter({
           .string()
           .min(1, { message: "Prompt is required" })
           .max(1000, { message: "Prompt is too long" }),
-        projectId: z.string().min(1, { message: "Project ID is required" }),
       })
     )
     .mutation(async ({ input }) => {
-      // Check if Project exists
-      const project = await prisma.project.findUnique({
-        where: { id: input.projectId },
-      });
-
-      if (!project) {
-        throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "Project not found.",
-        });
-      }
+      // Generate title using AI
+      const name = await generateTitleFromPrompt(input.prompt);
 
       // Save prompt in DB
-      const createdMessage = await prisma.message.create({
+      const createdProject = await prisma.project.create({
         data: {
-          content: input.prompt,
-          role: "USER",
-          type: "RESULT",
-          projectId: input.projectId,
+          name: name,
+          messages: {
+            create: {
+              content: input.prompt,
+              role: "USER",
+              type: "RESULT",
+            },
+          },
         },
       });
 
@@ -52,10 +46,10 @@ export const messagesRouter = createTRPCRouter({
         name: "app/generate.requested",
         data: {
           value: input.prompt,
-          projectId: input.projectId,
+          projectId: createdProject.id,
         },
       });
 
-      return createdMessage;
+      return createdProject;
     }),
 });
