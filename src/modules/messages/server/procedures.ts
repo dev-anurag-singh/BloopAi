@@ -16,7 +16,10 @@ export const messagesRouter = createTRPCRouter({
   create: baseProcedure
     .input(
       z.object({
-        prompt: z.string().min(1, { message: "Message is required" }),
+        prompt: z
+          .string()
+          .min(1, { message: "Prompt is required" })
+          .max(1000, { message: "Prompt is too long" }),
       })
     )
     .mutation(async ({ input }) => {
