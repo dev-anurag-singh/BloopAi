@@ -8,6 +8,7 @@ import {
 import { MessagesContainer } from "./messages-container";
 import { Suspense, useState } from "react";
 import { Fragment } from "@/generated/prisma";
+import { ProjectHeader } from "./project-header";
 
 interface Props {
   projectId: string;
@@ -24,6 +25,9 @@ export const ProjectView = ({ projectId }: Props) => {
           minSize={20}
           className="flex flex-col min-h-0"
         >
+          <Suspense fallback={<div>Loading Header...</div>}>
+            <ProjectHeader projectId={projectId} />
+          </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
             <MessagesContainer
               projectId={projectId}

@@ -25,15 +25,15 @@ export const MessagesContainer = ({
     trpc.messages.getMany.queryOptions({ projectId }, { refetchInterval: 5000 })
   );
 
-  useEffect(() => {
-    const lastAssistantMessage = messages.findLast(
-      message => message.role === "ASSISTANT"
-    );
+  // useEffect(() => {
+  //   const lastAssistantMessage = messages.findLast(
+  //     message => message.role === "ASSISTANT"
+  //   );
 
-    if (lastAssistantMessage) {
-      setActiveFragment(lastAssistantMessage.fragment);
-    }
-  }, [messages, setActiveFragment]);
+  //   if (lastAssistantMessage) {
+  //     setActiveFragment(lastAssistantMessage.fragment);
+  //   }
+  // }, [messages, setActiveFragment]);
 
   useEffect(() => {
     if (scrollToRef.current) {
@@ -47,7 +47,7 @@ export const MessagesContainer = ({
   return (
     <div className="flex flex-col flex-1 min-h-0">
       <ScrollArea className="flex-1 min-h-0">
-        <div className="pt-2 px-4 space-y-4 pb-6">
+        <div className="pt-4 px-4 space-y-4 pb-6">
           {messages.map(message => (
             <motion.div
               key={message.id}
