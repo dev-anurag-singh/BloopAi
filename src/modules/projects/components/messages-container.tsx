@@ -5,16 +5,24 @@ import { MessageCard } from "./message-card";
 import { MessageForm } from "./message-form";
 import { useEffect, useRef } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Fragment } from "@/generated/prisma";
+import { MessageLoading } from "./message-loading";
 
 interface Props {
   projectId: string;
+  activeFragment: Fragment | null;
+  setActiveFragment: (fragment: Fragment | null) => void;
 }
 
-export const MessagesContainer = ({ projectId }: Props) => {
+export const MessagesContainer = ({
+  projectId,
+  activeFragment,
+  setActiveFragment,
+}: Props) => {
   const trpc = useTRPC();
   const scrollToRef = useRef<HTMLDivElement>(null);
   const { data: messages } = useSuspenseQuery(
-    trpc.messages.getMany.queryOptions({ projectId })
+    trpc.messages.getMany.queryOptions({ projectId }, { refetchInterval: 5000 })
   );
 
   useEffect(() => {
@@ -23,15 +31,18 @@ export const MessagesContainer = ({ projectId }: Props) => {
     );
 
     if (lastAssistantMessage) {
-      // TODO SET ACTIVE FRAGMENT
+      setActiveFragment(lastAssistantMessage.fragment);
     }
-  }, [messages]);
+  }, [messages, setActiveFragment]);
 
   useEffect(() => {
     if (scrollToRef.current) {
       scrollToRef.current.scrollIntoView();
     }
   }, []);
+
+  const lastMessage = messages[messages.length - 1];
+  const isLastMessageUser = lastMessage?.role === "USER";
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
@@ -46,12 +57,13 @@ export const MessagesContainer = ({ projectId }: Props) => {
             >
               <MessageCard
                 message={message}
-                isActiveFragment={false}
-                onFragmentClick={() => {}}
+                isActiveFragment={activeFragment?.id === message.fragment?.id}
+                onFragmentClick={() => setActiveFragment(message.fragment)}
               />
             </motion.div>
           ))}
         </div>
+        {isLastMessageUser && <MessageLoading />}
         <div ref={scrollToRef} />
       </ScrollArea>
       <div className="relative p-4 pt-0">
