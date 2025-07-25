@@ -44,7 +44,15 @@ export const MessageCard = ({
         <div className="pl-8.5 flex flex-col gap-y-4">
           <span>{content}</span>
           {fragment && type === "RESULT" && (
-            <button className="flex items-start text-start gap-2 border rounded-lg bg-muted w-fit p-3 hover:bg-secondary transition-colors">
+            <button
+              className={cn(
+                "flex items-start text-start gap-2 border rounded-lg bg-muted w-fit p-3 hover:bg-secondary transition-colors",
+                {
+                  "bg-black text-white hover:bg-black": isActiveFragment,
+                }
+              )}
+              onClick={onFragmentClick}
+            >
               <Code2Icon className="size-4 mt-0.5" />
               <div className="flex flex-col flex-1">
                 <span className="text-sm font-medium">{fragment.title}</span>
