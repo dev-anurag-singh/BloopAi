@@ -38,7 +38,7 @@ export const ProjectHeader = ({ projectId }: Props) => {
   );
 
   return (
-    <header className="flex items-center justify-between gap-2 p-4 border-b bg-white dark:bg-zinc-900">
+    <header className="flex items-center justify-between gap-2 p-2 px-4 border-b ">
       <div className="flex items-center gap-3 max-w-[calc(100%-40px)]">
         <Link href={"/"}>
           <Image src="/logo.svg" alt="Bloop" width={18} height={18} />

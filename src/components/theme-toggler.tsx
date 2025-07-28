@@ -19,7 +19,8 @@ export function ThemeToggler() {
           <Button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             variant="ghost"
-            className="p-0"
+            size={"sm"}
+            className="p-2!"
           >
             <Moon className="hidden text-foreground  dark:inline-block" />
             <Sun className="text-foreground  dark:hidden" />
