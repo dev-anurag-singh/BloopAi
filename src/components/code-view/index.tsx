@@ -19,8 +19,8 @@ export const CodeView = ({ code, lang }: Props) => {
   }, [code, lang]);
 
   return (
-    <pre className="p-2 bg-transparent border-none rounded-none m-0 text-xs">
+    <div className="p-2 pr-4 text-xs h-fit min-h-full w-fit min-w-full">
       <code className={`language-${lang}`}>{code}</code>
-    </pre>
+    </div>
   );
 };
