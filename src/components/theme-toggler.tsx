@@ -8,8 +8,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Moon, Sun } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export function ThemeToggler() {
+export function ThemeToggler({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -20,7 +21,7 @@ export function ThemeToggler() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             variant="ghost"
             size={"sm"}
-            className="p-2!"
+            className={cn("p-2!", className)}
           >
             <Moon className="hidden text-foreground  dark:inline-block" />
             <Sun className="text-foreground  dark:hidden" />
