@@ -1,31 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import {
-  ChevronDownIcon,
-  ChevronLeftIcon,
-  EditIcon,
-  Moon,
-  Sun,
-  SunMoonIcon,
-} from "lucide-react";
 import { useTRPC } from "@/trpc/client";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuPortal,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { ThemeToggler } from "@/components/theme-toggler";
+import { Logo } from "@/components/logo";
 
 interface Props {
   projectId: string;
@@ -41,7 +18,7 @@ export const ProjectHeader = ({ projectId }: Props) => {
     <header className="flex items-center justify-between gap-2 p-2 px-4 border-b ">
       <div className="flex items-center gap-3 max-w-[calc(100%-40px)]">
         <Link href={"/"}>
-          <Image src="/logo.svg" alt="Bloop" width={18} height={18} />
+          <Logo size="sm" onlyIcon />
         </Link>
         <span className="text-sm font-medium truncate">{project.name}</span>
       </div>

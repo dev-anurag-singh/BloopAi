@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import Image from "next/image";
 import { ChevronRightIcon, Code2Icon } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 type Message = inferRouterOutputs<AppRouter>["messages"]["getMany"][number];
 
@@ -29,13 +30,7 @@ export const MessageCard = ({
         })}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Image
-            src="/logo.svg"
-            alt="BloopAi"
-            width={18}
-            height={18}
-            className="shrink-0"
-          />
+          <Logo size="sm" onlyIcon />
           <span className="text-sm font-medium">Bloop</span>
           <span className="text-sm text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100">
             {format(createdAt, "HH:mm 'on' MMM dd, yyyy")}
