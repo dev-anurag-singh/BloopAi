@@ -56,7 +56,7 @@ export const ProjectView = ({ projectId }: Props) => {
             onValueChange={value => setTabView(value as "preview" | "code")}
           >
             <div className="w-full flex items-center p-2 border-b gap-x-2 ">
-              <TabsList className="h-8 p-0 border rounded-md">
+              <TabsList className="h-8 p-[1px] border rounded-md">
                 <TabsTrigger value="preview" className="rounded-md">
                   <EyeIcon />
                   <span>Preview</span>
